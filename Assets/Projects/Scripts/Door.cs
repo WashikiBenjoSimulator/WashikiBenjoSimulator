@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 namespace DoorScript
 {
 	[RequireComponent(typeof(AudioSource))]
@@ -34,12 +35,17 @@ namespace DoorScript
 		}  
 	}
 
-	public void OpenDoor(){
+	public void OpenDoor(GameObject door){
+		Debug.Log(door.name);
 		open =!open;
 		asource.clip = open?openDoor:closeDoor;
 		asource.Play ();
 
 		//ここにシーン遷移の処理
+		if(door.name == "Door"){
+			SceneManager.LoadScene("DormitoryScene", LoadSceneMode.Additive);
+			SceneManager.UnloadSceneAsync("RobbyScene");
+		}
 	}
 }
 }

@@ -1,21 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using Projects.Scripts.Core;
 
-public class UIManager : MonoBehaviour
-{
-    [SerializeField] private TextMeshProUGUI textArea;
-    // Start is called before the first frame update
-    void Start()
+namespace BenkiUI{
+    public class UIManager : SingletonMonoBehaviour<UIManager>, IAltoManager
     {
-        textArea.text = "Approach the door and press the E key.";
-    }
+        public TextMeshProUGUI textArea;
+        // Start is called before the first frame update
+        void Start()
+        {
+            textArea.text = "ドアに近づく．";
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
+        // Update is called once per frame
+        void Update()
+        {
         
+        }
+
+        void IAltoManager.OnInitialize()
+        {
+            // throw new System.NotImplementedException();
+        }
     }
 }

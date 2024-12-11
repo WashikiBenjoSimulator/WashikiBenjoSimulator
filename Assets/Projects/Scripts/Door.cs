@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using GameScript;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 namespace DoorScript
@@ -43,9 +44,14 @@ namespace DoorScript
 
 		//ここにシーン遷移の処理
 		if(door.name == "Door"){
-			SceneManager.LoadScene("DormitoryScene", LoadSceneMode.Additive);
-			SceneManager.UnloadSceneAsync("RobbyScene");
+			Invoke("LoodDormitoryScene", 3.0f);
 		}
+	}
+
+	private void LoodDormitoryScene()
+	{
+		SceneManager.LoadScene("DormitoryScene", LoadSceneMode.Additive);
+		SceneManager.UnloadSceneAsync("RobbyScene");
 	}
 }
 }

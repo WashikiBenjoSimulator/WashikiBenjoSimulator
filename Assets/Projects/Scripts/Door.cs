@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using GameScript;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 namespace DoorScript
 {
 	[RequireComponent(typeof(AudioSource))]
@@ -42,10 +43,13 @@ namespace DoorScript
 		asource.clip = open?openDoor:closeDoor;
 		asource.Play ();
 
-		//ここにシーン遷移の処理
-		if(door.name == "Door"){
+		//RobbySceneのドアはDoorタグ、DormitorySceneのドアはDormitoryDoorタグ
+		if(door.tag == "Door"){
 			Invoke("LoodDormitoryScene", 3.0f);
+		}else if(door.tag == "DormitoryDoor"){
+			GameManager.Instance.isToilet = true;
 		}
+
 	}
 
 	private void LoodDormitoryScene()

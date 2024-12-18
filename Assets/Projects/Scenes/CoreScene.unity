@@ -843,6 +843,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textArea: {fileID: 0}
+  toiletObj: {fileID: 0}
+  toiletDoorObj: {fileID: 0}
+  seatObj: {fileID: 0}
+  poopObj: {fileID: 0}
+  player: {fileID: 0}
+  isToilet: 0
+  canPoop: 0
 --- !u!4 &869829164
 Transform:
   m_ObjectHideFlags: 0
@@ -1140,6 +1147,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textArea: {fileID: 1853511432}
+  toiletObj: {fileID: 0}
+  toiletDoorObj: {fileID: 0}
+  seatObj: {fileID: 0}
+  poopObj: {fileID: 0}
+  player: {fileID: 0}
+  isToilet: 0
+  canPoop: 0
 --- !u!1 &1479151090
 GameObject:
   m_ObjectHideFlags: 0
@@ -2676,7 +2690,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1857658250}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c79693c113927e74fbeb048397140256, type: 3}
   m_Name: 

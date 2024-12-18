@@ -5,7 +5,7 @@ using UnityEngine;
 namespace CameraDoorScript
 {
 public class CameraOpenDoor : MonoBehaviour {
-	public float DistanceOpen=3;
+	public float DistanceOpen=1;
 	// public GameObject text;
 	// Use this for initialization
 	void Start () {
@@ -17,15 +17,16 @@ public class CameraOpenDoor : MonoBehaviour {
 		RaycastHit hit;
 		if (Physics.Raycast (transform.position, transform.forward, out hit, DistanceOpen))
 		{
-			if (hit.transform.GetComponent<DoorScript.Door> ())
+			if(hit.collider == null) return;
+
+			if (hit.collider.CompareTag("Door"))
+			{
 				GameScript.GameManager.Instance.textArea.text = "Eキーでドアを開ける";
 
-			if (Input.GetKeyDown(KeyCode.E))
+				if (Input.GetKeyDown(KeyCode.E))
 				hit.transform.GetComponent<DoorScript.Door> ().OpenDoor(hit.transform.gameObject);
 				// Debug.Log(hit.collider.gameObject.name);
-		}else{
-			// text.SetActive (false);
-			GameScript.GameManager.Instance.textArea.text = "ドアに近づく";
+			}
 		}
 	}
 }

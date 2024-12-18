@@ -12,10 +12,8 @@ public class GameManager : SingletonMonoBehaviour<GameManager>, IAltoManager
 {
     public TextMeshProUGUI textArea;
     [SerializeField] private GameObject toiletObj;
-    [SerializeField] private GameObject toiletDoorObj;
     [SerializeField] private GameObject seatObj;
     [SerializeField] private GameObject poopObj;
-    [SerializeField] private GameObject player;
     private bool isPlayGame = false;
     public bool isToilet = false;
     public bool canPoop = false;
@@ -48,7 +46,9 @@ public class GameManager : SingletonMonoBehaviour<GameManager>, IAltoManager
         {
             if(Input.GetKeyDown(KeyCode.R))
             {
-
+                textArea.text = "用を足した";
+                poopObj.SetActive(true);
+                
             }
         }
     }

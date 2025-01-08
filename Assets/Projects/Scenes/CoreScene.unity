@@ -1625,10 +1625,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bf296fc962d7184ab14ad1841598d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_System: {fileID: 0}
+  m_System: {fileID: 1596162770}
   m_MoveSpeed: 1
   m_EnableStrafe: 1
-  m_EnableFly: 0
+  m_EnableFly: 1
   m_UseGravity: 1
   m_GravityApplicationMode: 0
   m_ForwardSource: {fileID: 0}

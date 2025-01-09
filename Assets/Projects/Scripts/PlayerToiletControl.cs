@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class PlayerToiletControl : MonoBehaviour
 {
-    public event System.Action OnSitPlayer;
-    public event System.Action OnPoopPlayer;
     // Start is called before the first frame update
     void Start()
     {

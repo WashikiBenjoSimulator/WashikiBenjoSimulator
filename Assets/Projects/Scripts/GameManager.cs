@@ -21,7 +21,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>, IAltoManager
 
     public float time = 0;
 
-    public int score = 0;
+    public int score = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -70,7 +70,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>, IAltoManager
         }
         if(Vector3.Distance(poopObj.transform.position, toiletObj.transform.position) > 0.5f)
         {
-            GameManager.Instance.score -= 40;
+            GameManager.Instance.score -= 50;
             textArea.text = "満足に用を足せていない -50";
         }
         if(time > 60)

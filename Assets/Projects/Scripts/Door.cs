@@ -45,17 +45,11 @@ namespace DoorScript
 
 		//RobbySceneのドアはDoorタグ、DormitorySceneのドアはDormitoryDoorタグ
 		if(door.tag == "Door"){
-			Invoke("LoodDormitoryScene", 3.0f);
+			WBSSceneManager.Instance.LoadSceneAsync("DormitoryScene", true);
 		}else if(door.tag == "DormitoryDoor"){
 			GameManager.Instance.isToilet = true;
 		}
 
-	}
-
-	private void LoodDormitoryScene()
-	{
-		SceneManager.LoadScene("DormitoryScene", LoadSceneMode.Additive);
-		SceneManager.UnloadSceneAsync("RobbyScene");
 	}
 }
 }

@@ -35,7 +35,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>, IAltoManager
     {
         time += Time.deltaTime;
 
-        if(SceneManager.GetActiveScene().name == "RobbyRoom")
+        if(WBSSceneManager.Instance.loadedScenes.Contains("RobbyRoom"))
         {
             isPlayGame = true;
         }else return;

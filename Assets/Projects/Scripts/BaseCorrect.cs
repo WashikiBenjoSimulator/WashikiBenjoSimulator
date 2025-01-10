@@ -18,7 +18,7 @@ public class BaseCorrect : MonoBehaviour
         if (Physics.SphereCast(transform.position + new Vector3(0, 20, 0), 0.5f, Vector3.down, out RaycastHit hit, 50f, layerMask))
         {
             var userPos = transform.position;
-            userPos.y = 1.08f;
+            userPos.y = 0.15f;
 
             transform.position = userPos;
         }else

@@ -7,6 +7,7 @@ TagManager:
   - ToiletDoor
   - Door
   - ashiba
+  - benki
   layers:
   - Default
   - TransparentFX

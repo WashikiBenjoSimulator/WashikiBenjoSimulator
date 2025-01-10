@@ -37,7 +37,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>, IAltoManager
         {
             time += Time.deltaTime;
             timeArea.text = "残り時間: " + (60-time); 
-        }       
+        }else time = 0;
     }
 
     public void calcScore()
@@ -46,7 +46,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>, IAltoManager
         if(Vector3.Distance(hipObj.transform.position, seatObj.transform.position) > 0.5f)
         {
             GameManager.Instance.score -= 20;
-            textArea.text += "\nトイレから離れすぎ -20";
+            textArea.text = "\nトイレから離れすぎ -20";
         }
         if(successPoop == false)
         {

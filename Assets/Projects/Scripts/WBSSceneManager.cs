@@ -117,7 +117,7 @@ public class WBSSceneManager : SingletonMonoBehaviour<WBSSceneManager>, IAltoMan
 
     public void ChengeRobbyScene()
     {
+        LoadSceneAsync("CoreScene", false);
         LoadSceneAsync("RobbyScene", true);
-        UnloadSceneAsync("DormitoryScene");
     }
 }

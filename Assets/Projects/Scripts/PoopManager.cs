@@ -41,8 +41,9 @@ public class PoopManager : SingletonMonoBehaviour<PoopManager>, IAltoManager
 
     void OnTrigerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("toilet"))
+        if (other.gameObject.CompareTag("benki"))
         {
+            Debug.Log("うんちがトイレに入った");
             GameManager.Instance.successPoop = true;
         }
     }

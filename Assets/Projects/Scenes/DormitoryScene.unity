@@ -512,7 +512,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4218343897795129420, guid: d81088233dac50d419d36988693bc07a, type: 3}
       propertyPath: m_TagString
-      value: ashiba
+      value: benki
       objectReference: {fileID: 0}
     - target: {fileID: 4647713690142502353, guid: d81088233dac50d419d36988693bc07a, type: 3}
       propertyPath: m_Name

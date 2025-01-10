@@ -1,0 +1,54 @@
+{
+    "name": "HipActions",
+    "maps": [
+        {
+            "name": "Hip",
+            "id": "86cecbea-68c3-469b-b136-2f87f750c1a7",
+            "actions": [
+                {
+                    "name": "Position",
+                    "type": "Value",
+                    "id": "b8dcead6-3455-4b4f-adf7-8e62eaca096c",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Rotation",
+                    "type": "Value",
+                    "id": "064e115b-715d-4eed-92d2-db0f4e0eb76a",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e170021c-cb54-4987-82f0-afd406592022",
+                    "path": "<XRViveTracker>{Waist}/devicePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9dc62ce9-e12e-43ab-96bd-d842d48e09b8",
+                    "path": "<XRViveTracker>{Waist}/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

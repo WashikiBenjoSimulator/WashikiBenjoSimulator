@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using GameScript;
 using UnityEngine;
+using UnityEngine.InputSystem.Controls;
 using UnityEngine.SceneManagement;
 
-namespace DoorScript
+namespace MyDoorScript
 {
 	[RequireComponent(typeof(AudioSource))]
 	
-	public class Door : MonoBehaviour {
+	public class MyDoor : MonoBehaviour {
 	public bool open;
 	public float smooth = 1.0f;
 	float DoorOpenAngle = -90.0f;
@@ -38,18 +39,9 @@ namespace DoorScript
 	}
 
 	public void OpenDoor(GameObject door){
-		Debug.Log(door.name);
 		open =!open;
 		asource.clip = open?openDoor:closeDoor;
 		asource.Play ();
-
-		//RobbySceneのドアはDoorタグ、DormitorySceneのドアはDormitoryDoorタグ
-		if(door.tag == "Door"){
-			WBSSceneManager.Instance.LoadSceneAsync("DormitoryScene", true);
-		}else if(door.tag == "DormitoryDoor"){
-			GameManager.Instance.isToilet = true;
-		}
-
 	}
 }
 }

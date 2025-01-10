@@ -7,6 +7,11 @@ using UnityEngine.SceneManagement;
 
 public class WBSSceneManager : SingletonMonoBehaviour<WBSSceneManager>, IAltoManager
 {
+    void Start()
+    {
+        LoadSceneAsync("RobbyScene", true);
+    }
+
     // ロード中のシーンを管理する
     private static WBSSceneManager instance;
 
@@ -101,5 +106,18 @@ public class WBSSceneManager : SingletonMonoBehaviour<WBSSceneManager>, IAltoMan
         loadedScenes.Remove(sceneName);  // アンロードされたらリストから削除
         isLoadingScene = false;
         Debug.Log($"シーン {sceneName} のアンロード完了");
+    }
+
+    // ドミトリーシーンに切り替える
+    public void ChengeDomitoryScene()
+    {
+        LoadSceneAsync("DormitoryScene", true);
+        UnloadSceneAsync("RobbyScene");
+    }
+
+    public void ChengeRobbyScene()
+    {
+        LoadSceneAsync("RobbyScene", true);
+        UnloadSceneAsync("DormitoryScene");
     }
 }

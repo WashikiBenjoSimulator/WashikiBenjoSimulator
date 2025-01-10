@@ -6,14 +6,15 @@ TagManager:
   tags:
   - ToiletDoor
   - Door
+  - ashiba
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - ashiba
   - Water
   - UI
-  - 
+  - benki
   - 
   - 
   - 

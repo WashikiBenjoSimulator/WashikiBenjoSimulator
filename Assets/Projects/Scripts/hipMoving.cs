@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using GameScript;
+using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class hipMoving : MonoBehaviour
 {
+    public TextMeshProUGUI textArea;
+    public InputActionReference rightHandTrigerAction;
     // [SerializeField] private GameObject hipInPlayerObj;
 
     // Start is called before the first frame update
@@ -16,17 +20,17 @@ public class hipMoving : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // transform.position = hipInPlayerObj.transform.position;
+        if(PoopManager.Instance.isPoop == true) return;
 
-        //rayを下方向に飛ばす
-        Vector3 rayOrigin = transform.position;
-        if(Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit hit))
-        {
-            //もしrayがbennkiタグのオブジェクトに当たったら
-            if(hit.collider.CompareTag("bennki"))
-            {
-                GameManager.Instance.canPoop = true;
-            }
+        if (rightHandTrigerAction.action.WasPerformedThisFrame() && WBSSceneManager.Instance.loadedScenes.Contains("DormitoryScene")){
+                PoopManager.Instance.Poop();
+                StartCoroutine(calcScore());
         }
+    }
+
+    IEnumerator calcScore()
+    {
+        yield return new WaitForSeconds(3);
+        GameManager.Instance.calcScore();
     }
 }

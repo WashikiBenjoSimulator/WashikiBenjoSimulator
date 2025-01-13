@@ -33,6 +33,7 @@ public class TouchDetection : SingletonMonoBehaviour<TouchDetection>, IAltoManag
         }
         if (collider.gameObject.CompareTag("FlushHandle"))
         {
+            ToiletLever.Instance.RotateLever();
             isFlushHandleTouch = true;
         }
     }

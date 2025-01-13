@@ -30,11 +30,11 @@ public class WBSSceneManager : SingletonMonoBehaviour<WBSSceneManager>, IAltoMan
     public void LoadSceneAsync(string sceneName, bool additive = false)
     {
         // シーンがロード中なら何もしない
-        if (isLoadingScene)
-        {
-            Debug.Log("シーンのロード中...");
-            return;
-        }
+        // if (isLoadingScene)
+        // {
+        //     Debug.Log("シーンのロード中...");
+        //     return;
+        // }
 
         // 二重ロードを防ぐチェック
         if (additive && loadedScenes.Contains(sceneName))
@@ -51,11 +51,11 @@ public class WBSSceneManager : SingletonMonoBehaviour<WBSSceneManager>, IAltoMan
     public void UnloadSceneAsync(string sceneName)
     {
         // シーンがロード中なら何もしない
-        if (isLoadingScene)
-        {
-            Debug.Log("シーンのロード中...");
-            return;
-        }
+        // if (isLoadingScene)
+        // {
+        //     Debug.Log("シーンのロード中...");
+        //     return;
+        // }
 
         // シーンのアンロードを開始
         StartCoroutine(UnloadSceneCoroutine(sceneName));
@@ -81,6 +81,11 @@ public class WBSSceneManager : SingletonMonoBehaviour<WBSSceneManager>, IAltoMan
         if (additive)
         {
             loadedScenes.Add(sceneName);  // Additiveロードの場合、ロード済みシーンとして登録
+        }
+        else
+        {
+            loadedScenes.Clear();  // Singleロードの場合、ロード済みシーンをクリア
+            loadedScenes.Add(sceneName);  // ロード済みシーンとして登録
         }
         isLoadingScene = false;
         Debug.Log($"シーン {sceneName} のロード完了");

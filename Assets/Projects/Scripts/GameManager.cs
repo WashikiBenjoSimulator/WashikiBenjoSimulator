@@ -9,73 +9,78 @@ using UnityEngine.SceneManagement;
 
 namespace GameScript
 {
-public class GameManager : SingletonMonoBehaviour<GameManager>, IAltoManager
-{
-    public TextMeshProUGUI textArea;
-    public TextMeshProUGUI timeArea;
-    // [SerializeField] private GameObject toiletObj;
-    [SerializeField] private GameObject seatObj;
-    [SerializeField] private GameObject poopObj;
-    [SerializeField] private GameObject hipObj;
-    public float time = 0;
-
-    public int score = 100;
-    public bool successPoop = false;
-    public InputActionReference rightHandTrigerAction;
-
-
-    // Start is called before the first frame update
-    void Start()
+    public class GameManager : SingletonMonoBehaviour<GameManager>, IAltoManager
     {
-        textArea.text = "ドアに近づく";
-    }
+        public TextMeshProUGUI textArea;
+        public TextMeshProUGUI timeArea;
+        // [SerializeField] private GameObject toiletObj;
+        public bool isCorrectSeatPos = false;
+        public float time = 0;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(WBSSceneManager.Instance.loadedScenes.Contains("DormitoryScene"))
-        {
-            time += Time.deltaTime;
-            timeArea.text = "残り時間: " + (60-time); 
-        }else time = 0;
-    }
+        public int score = 100;
+        public bool successPoop = false;
+        public InputActionReference rightHandTrigerAction;
 
-    public void calcScore()
-    {
-        //得点計算
-        if(Vector3.Distance(hipObj.transform.position, seatObj.transform.position) > 0.5f)
+
+        // Start is called before the first frame update
+        void Start()
         {
-            GameManager.Instance.score -= 20;
-            textArea.text = "\nトイレから離れすぎ -20";
-        }
-        if(successPoop == false)
-        {
-            GameManager.Instance.score -= 40;
-            textArea.text += "\nうんちがトイレから外れたよ -40";
-        }
-        if(time > 60)
-        {
-            GameManager.Instance.score -= 100;
-            textArea.text += "\n時間切れ -100";
+            textArea.text = "ドアに近づく";
         }
 
-        timeArea.text = "スコア: " + GameManager.Instance.score;
-        if(score < 60)
+        // Update is called once per frame
+        void Update()
         {
-            textArea.text += "\n失敗した";
+            if (WBSSceneManager.Instance.loadedScenes.Contains("DormitoryScene"))
+            {
+                time += Time.deltaTime;
+                timeArea.text = "残り時間: " + (60 - time);
+            }
+            else time = 0;
         }
 
-        StartCoroutine(changeScene());
-    }
+        public void calcScore()
+        {
+            //得点計算
+            if (isCorrectSeatPos)
+            {
+                score -= 20;
+                textArea.text = "\nトイレから離れすぎ -20";
+            }
+            if (!successPoop)
+            {
+                score -= 40;
+                textArea.text += "\nトイレに入っていない -40";
+            }
+            if (TouchDetection.Instance.isToiletPaperTouch == true)
+            {
+                score += 5;
+                textArea.text += "\nトイレットペーパーを使った +5";
+            }
+            if (TouchDetection.Instance.isFlushHandleTouch == true)
+            {
+                score += 5;
+                textArea.text += "\nきちんと流した +5";
+            }
 
-    IEnumerator changeScene()
-    {
-        yield return new WaitForSeconds(3);
-        WBSSceneManager.Instance.ChengeRobbyScene();
-    }
+            timeArea.text = "スコア: " + score;
+            if (score < 60)
+            {
+                textArea.text += "\n失敗した";
+            }
 
-    void IAltoManager.OnInitialize()
-    {
+            StartCoroutine(changeScene());
+        }
 
+        IEnumerator changeScene()
+        {
+            yield return new WaitForSeconds(3);
+            WBSSceneManager.Instance.ChengeRobbyScene();
+        }
+
+        void IAltoManager.OnInitialize()
+        {
+
+        }
     }
-}}
+}

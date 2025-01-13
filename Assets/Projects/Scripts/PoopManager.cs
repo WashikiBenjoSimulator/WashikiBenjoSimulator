@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PoopManager : SingletonMonoBehaviour<PoopManager>, IAltoManager
 {
-    public float fallSpeed = 9.8f;
+    public float fallSpeed = 2f;
     private Rigidbody rb;
     [SerializeField] private GameObject hipPos;
     [SerializeField] private GameObject poop;

@@ -8,6 +8,9 @@ TagManager:
   - Door
   - ashiba
   - benki
+  - ToiletPaper
+  - FlushHandle
+  - SeatPosition
   layers:
   - Default
   - TransparentFX

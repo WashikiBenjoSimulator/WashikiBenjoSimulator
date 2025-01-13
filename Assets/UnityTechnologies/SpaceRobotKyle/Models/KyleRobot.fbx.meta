@@ -22,7 +22,9 @@ ModelImporter:
     removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Avatar Rig Configuration mis-match. Bone length in configuration
+      does not match position in animation file:\n\t'LeftLeg' : position error =
+      17.045135 mm\n\t'RightLeg' : position error = 27.745148 mm\n"
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -505,12 +507,12 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: Hips
       parentName: ROOT
-      position: {x: 0.0011525444, y: 0.92327946, z: 0.031144565}
+      position: {x: 0.0011525444, y: 0.92327946, z: -0.012}
       rotation: {x: 0, y: -0, z: -0.7071068, w: 0.7071068}
       scale: {x: 1, y: 1, z: 1}
     - name: LeftLeg
       parentName: Hips
-      position: {x: 0.040506702, y: -0.1123617, z: 0.019476954}
+      position: {x: 0.040506702, y: -0.1123617, z: 0.037}
       rotation: {x: 0.0754832, y: 4.622013e-18, z: 0.9971471, w: -6.105765e-17}
       scale: {x: 1, y: 1, z: 1}
     - name: LeftCalf
@@ -530,7 +532,7 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: RightLeg
       parentName: Hips
-      position: {x: 0.040506467, y: 0.112361446, z: 0.019476933}
+      position: {x: 0.040506467, y: 0.112361446, z: 0.048}
       rotation: {x: 0.9971471, y: -0.00000004092912, z: -0.0754832, w: -0.0000000030983003}
       scale: {x: 1, y: 1, z: 1}
     - name: RightCalf
@@ -550,13 +552,13 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: Spine1
       parentName: Hips
-      position: {x: -0.10960053, y: 6.925047e-17, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
+      position: {x: -0.10960062, y: 0, z: 0.009}
+      rotation: {x: -0, y: 0.062038895, z: -0, w: 0.99807376}
       scale: {x: 1, y: 1, z: 1}
     - name: Spine2
       parentName: Spine1
-      position: {x: -0.099429995, y: 2.2065681e-17, z: 0}
-      rotation: {x: 0, y: -0.043619387, z: -0, w: 0.99904823}
+      position: {x: -0.099, y: 0, z: -0.034}
+      rotation: {x: -0, y: 0.123921834, z: -0, w: 0.99229205}
       scale: {x: 1, y: 1, z: 1}
     - name: LeftShoulder
       parentName: Spine2
@@ -570,7 +572,7 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: LeftArm
       parentName: LeftUpperArm
-      position: {x: -0.362, y: 0.004, z: 0.009}
+      position: {x: -0.252, y: 0, z: 0.009}
       rotation: {x: -0.00304173, y: 0.033358734, z: -0.014950736, w: 0.999327}
       scale: {x: 1, y: 1, z: 1}
     - name: LeftHand
@@ -661,7 +663,7 @@ ModelImporter:
     - name: Head
       parentName: Neck
       position: {x: -0.08124788, y: 1.3877787e-19, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
+      rotation: {x: -0, y: -0.21736373, z: -0, w: 0.97609067}
       scale: {x: 1, y: 1, z: 1}
     - name: RightShoulder
       parentName: Spine2
@@ -675,7 +677,7 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: RightArm
       parentName: RightUpperArm
-      position: {x: 0.361, y: -0.004, z: -0.01}
+      position: {x: 0.247, y: 0, z: -0.01}
       rotation: {x: -0.003040618, y: 0.033357665, z: -0.014939858, w: 0.99932724}
       scale: {x: 1, y: 1, z: 1}
     - name: RightHand

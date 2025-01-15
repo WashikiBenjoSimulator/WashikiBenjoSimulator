@@ -1,22 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using GameScript;
 using Projects.Scripts.Core;
 using UnityEngine;
 
-public class TouchDetection : SingletonMonoBehaviour<TouchDetection>, IAltoManager
+public class TouchDetection : MonoBehaviour
 {
-    public bool isToiletPaperTouch = false;
-    public bool isFlushHandleTouch = false;
-
     // Start is called before the first frame update
     void Start()
     {
 
-    }
-
-    void IAltoManager.OnInitialize()
-    {
-        // 初期化処理があればここに書く
     }
 
     // Update is called once per frame
@@ -29,12 +22,12 @@ public class TouchDetection : SingletonMonoBehaviour<TouchDetection>, IAltoManag
     {
         if (collider.gameObject.CompareTag("ToiletPaper"))
         {
-            isToiletPaperTouch = true;
+            GameManager.Instance.isToiletPaperTouch = true;
         }
         if (collider.gameObject.CompareTag("FlushHandle"))
         {
             ToiletLever.Instance.RotateLever();
-            isFlushHandleTouch = true;
+            GameManager.Instance.isFlushHandleTouch = true;
         }
     }
 }

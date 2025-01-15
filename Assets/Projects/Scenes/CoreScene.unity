@@ -584,7 +584,7 @@ GameObject:
   - component: {fileID: 768558871}
   - component: {fileID: 768558870}
   - component: {fileID: 768558876}
-  - component: {fileID: 768558875}
+  - component: {fileID: 768558877}
   m_Layer: 0
   m_Name: Left Controller
   m_TagString: Untagged
@@ -1228,20 +1228,6 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -1636515391019944688, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_ButtonPressPoint: 0.5
---- !u!114 &768558875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 768558868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62dad34cc5ff3364a9a4be712d2e0e61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isToiletPaperTouch: 0
-  isFlushHandleTouch: 0
 --- !u!65 &768558876
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1263,6 +1249,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.1, y: 0.1, z: 0.1}
   m_Center: {x: 0, y: 0.5, z: 0.5}
+--- !u!114 &768558877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768558868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62dad34cc5ff3364a9a4be712d2e0e61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &779559089
 GameObject:
   m_ObjectHideFlags: 0
@@ -2298,7 +2296,7 @@ GameObject:
   - component: {fileID: 1641406671}
   - component: {fileID: 1641406670}
   - component: {fileID: 1641406676}
-  - component: {fileID: 1641406675}
+  - component: {fileID: 1641406677}
   m_Layer: 0
   m_Name: Right Controller
   m_TagString: Untagged
@@ -2942,20 +2940,6 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -6447266317303757838, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_ButtonPressPoint: 0.5
---- !u!114 &1641406675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641406668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62dad34cc5ff3364a9a4be712d2e0e61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isToiletPaperTouch: 0
-  isFlushHandleTouch: 0
 --- !u!65 &1641406676
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2977,6 +2961,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.1, y: 0.1, z: 0.1}
   m_Center: {x: 0, y: 0.5, z: 0.5}
+--- !u!114 &1641406677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641406668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62dad34cc5ff3364a9a4be712d2e0e61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1673919967
 GameObject:
   m_ObjectHideFlags: 0
@@ -3013,6 +3009,8 @@ MonoBehaviour:
   score: 0
   successPoop: 0
   rightHandTrigerAction: {fileID: -883006526375621116, guid: 27451da15c211db48beb0622ce96a5d6, type: 3}
+  isToiletPaperTouch: 0
+  isFlushHandleTouch: 0
 --- !u!4 &1673919969
 Transform:
   m_ObjectHideFlags: 0

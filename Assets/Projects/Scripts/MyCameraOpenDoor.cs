@@ -29,6 +29,7 @@ public class MyCameraOpenDoor : MonoBehaviour {
 
 				//左トリガーが押されたら
 				if (leftHandTrigerAction.action.WasPerformedThisFrame()){
+					Debug.Log("ドアを開ける");
 					hit.transform.GetComponent<MyDoorScript.MyDoor>().OpenDoor(hit.transform.gameObject);
 					
 					foreach (var item in WBSSceneManager.Instance.loadedScenes)
@@ -36,8 +37,9 @@ public class MyCameraOpenDoor : MonoBehaviour {
 						Debug.Log(item);
 					}
 
-					if(WBSSceneManager.Instance.loadedScenes.Contains("RobbyScene"))
+					if(WBSSceneManager.Instance.loadedScenes.Contains("LobbyScene"))
 					{
+						Debug.Log("ロビーからドミトリーへ移動");
 						WBSSceneManager.Instance.ChengeDomitoryScene();
 					}
 				}

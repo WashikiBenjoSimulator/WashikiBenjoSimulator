@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 namespace CameraDoorScript
 {
 public class MyCameraOpenDoor : MonoBehaviour {
-	public float DistanceOpen=1;
+	public float DistanceOpen=3f;
 	public InputActionReference leftHandTrigerAction;
 
 	// public GameObject text;
@@ -19,7 +19,7 @@ public class MyCameraOpenDoor : MonoBehaviour {
 	void Update () {
 		RaycastHit hit;
 		if (Physics.Raycast (transform.position, transform.forward, out hit, DistanceOpen)){
-			//何もなければリターン
+			//ドアがなければリターン
 			if (!hit.transform.GetComponent<MyDoorScript.MyDoor>()){
 				return;
 			}

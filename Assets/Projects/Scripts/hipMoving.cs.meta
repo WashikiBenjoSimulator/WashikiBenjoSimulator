@@ -3,7 +3,9 @@ guid: b7f59b57609c2674b82ab5a4bbeab853
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - textArea: {instanceID: 0}
+  - rightHandTrigerAction: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

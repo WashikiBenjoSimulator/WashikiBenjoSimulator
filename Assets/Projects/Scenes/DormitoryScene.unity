@@ -1036,6 +1036,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 82d119d2f43ab094c883ab2f5c0404de, type: 2}
+    - target: {fileID: 3238303536560472980, guid: d81088233dac50d419d36988693bc07a, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238303536560472980, guid: d81088233dac50d419d36988693bc07a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3466150669070597573, guid: d81088233dac50d419d36988693bc07a, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.215

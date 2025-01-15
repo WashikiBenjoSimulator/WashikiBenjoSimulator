@@ -20,6 +20,8 @@ namespace GameScript
         public int score = 100;
         public bool successPoop = false;
         public InputActionReference rightHandTrigerAction;
+        public bool isToiletPaperTouch = false;
+        public bool isFlushHandleTouch = false;
 
 
         // Start is called before the first frame update
@@ -52,12 +54,12 @@ namespace GameScript
                 score -= 40;
                 textArea.text += "\nトイレに入っていない -40";
             }
-            if (TouchDetection.Instance.isToiletPaperTouch == true)
+            if (isToiletPaperTouch == true)
             {
                 score += 5;
                 textArea.text += "\nトイレットペーパーを使った +5";
             }
-            if (TouchDetection.Instance.isFlushHandleTouch == true)
+            if (isFlushHandleTouch == true)
             {
                 score += 5;
                 textArea.text += "\nきちんと流した +5";

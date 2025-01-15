@@ -9,7 +9,22 @@ public class WBSSceneManager : SingletonMonoBehaviour<WBSSceneManager>, IAltoMan
 {
     void Start()
     {
-        LoadSceneAsync("RobbyScene", true);
+        LoadSceneAsync("LobbyScene", true);
+    }
+
+    void Update(){
+        if(!isWait) return;
+
+        waitTime += Time.deltaTime;
+        if(waitTime > 3f){
+            isWait = false;
+
+            if(isWaitLoad){
+                LoadSceneAsync(nextSceneName, true);
+            }else{
+                UnloadSceneAsync(nextSceneName);
+            }
+        }
     }
 
     // ロード中のシーンを管理する
@@ -21,6 +36,11 @@ public class WBSSceneManager : SingletonMonoBehaviour<WBSSceneManager>, IAltoMan
     // ロード済みのシーンを追跡するリスト
     public HashSet<string> loadedScenes = new HashSet<string>();
 
+    private bool isWait = false;
+    private float waitTime = 0f;
+    private string nextSceneName = "";
+    private bool isWaitLoad = false;
+
     void IAltoManager.OnInitialize()
     {
         // 初期化処理があればここに書く
@@ -29,12 +49,14 @@ public class WBSSceneManager : SingletonMonoBehaviour<WBSSceneManager>, IAltoMan
     // 非同期にシーンをロードする
     public void LoadSceneAsync(string sceneName, bool additive = false)
     {
-        // シーンがロード中なら何もしない
-        // if (isLoadingScene)
-        // {
-        //     Debug.Log("シーンのロード中...");
-        //     return;
-        // }
+        // シーンがロード中なら数秒後にやりなおす
+        if (isLoadingScene)
+        {
+            nextSceneName = sceneName;
+            isWait = true;
+            isWaitLoad = true;
+            return;
+        }
 
         // 二重ロードを防ぐチェック
         if (additive && loadedScenes.Contains(sceneName))
@@ -50,12 +72,14 @@ public class WBSSceneManager : SingletonMonoBehaviour<WBSSceneManager>, IAltoMan
     // 非同期にシーンをアンロードする
     public void UnloadSceneAsync(string sceneName)
     {
-        // シーンがロード中なら何もしない
-        // if (isLoadingScene)
-        // {
-        //     Debug.Log("シーンのロード中...");
-        //     return;
-        // }
+        // シーンがロード中なら数秒後にやりなおす
+        if (isLoadingScene)
+        {
+            nextSceneName = sceneName;
+            isWait = true;
+            isWaitLoad = false;
+            return;
+        }
 
         // シーンのアンロードを開始
         StartCoroutine(UnloadSceneCoroutine(sceneName));

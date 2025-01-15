@@ -3,15 +3,22 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ToiletDoor
+  - Door
+  - ashiba
+  - benki
+  - ToiletPaper
+  - FlushHandle
+  - SeatPosition
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - ashiba
   - Water
   - UI
-  - 
+  - benki
   - 
   - 
   - 

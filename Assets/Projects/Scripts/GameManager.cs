@@ -19,7 +19,6 @@ namespace GameScript
 
         public int score = 100;
         public bool successPoop = false;
-        public InputActionReference rightHandTrigerAction;
         public bool isToiletPaperTouch = false;
         public bool isFlushHandleTouch = false;
 
@@ -33,10 +32,17 @@ namespace GameScript
         // Update is called once per frame
         void Update()
         {
-            if (WBSSceneManager.Instance.loadedScenes.Contains("DormitoryScene"))
+            // if (WBSSceneManager.Instance.loadedScenes.Contains("DormitoryScene"))
+            // {
+            //     time += Time.deltaTime;
+            //     timeArea.text = "残り時間: " + (60 - time);
+            // }
+            // else time = 0;
+
+            if(BenjoSceneManager.Instance.IsSceneLoaded(BenjoSceneManager.SceneType.DormitoryScene))
             {
                 time += Time.deltaTime;
-                timeArea.text = "残り時間: " + (60 - time);
+                timeArea.text = "Time: " + time + "s";
             }
             else time = 0;
         }
@@ -71,13 +77,7 @@ namespace GameScript
                 textArea.text += "\n失敗した";
             }
 
-            StartCoroutine(changeScene());
-        }
-
-        IEnumerator changeScene()
-        {
-            yield return new WaitForSeconds(3);
-            WBSSceneManager.Instance.ChengeRobbyScene();
+            BenjoSceneManager.Instance.UnloadAllScenes(); //シーンのアンロード
         }
 
         void IAltoManager.OnInitialize()

@@ -1,16 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using GameScript;
 using Projects.Scripts.Core;
+using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PoopManager : SingletonMonoBehaviour<PoopManager>, IAltoManager
 {
-    public float fallSpeed = 2f;
-    private Rigidbody rb;
     [SerializeField] private GameObject hipPos;
     [SerializeField] private GameObject poop;
+    [SerializeField] private GameObject parent;
+
     public bool isPoop = false;
+
+    public InputActionReference rightHandTrigerAction;
+
 
     void IAltoManager.OnInitialize()
     {
@@ -20,31 +26,24 @@ public class PoopManager : SingletonMonoBehaviour<PoopManager>, IAltoManager
     // Start is called before the first frame update
     void Start()
     {
-        rb = poop.GetComponent<Rigidbody>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (rightHandTrigerAction.action.WasPerformedThisFrame())
+        {
+            Debug.Log("Pooping!!!!!!");
+        }
     }
 
     public void Poop()
     {
-        isPoop = true;
-        poop.transform.position = hipPos.transform.position;
-        poop.SetActive(true);
+        // isPoop = true;
+        // poop.transform.position = hipPos.transform.position;
+        // poop.SetActive(true);
 
-        //自由落下
-        rb.AddForce(Vector3.down * fallSpeed, ForceMode.Impulse);
-    }
-
-    void OnTrigerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("benki"))
-        {
-            Debug.Log("うんちがトイレに入った");
-            GameManager.Instance.successPoop = true;
-        }
+        Instantiate(poop, hipPos.transform.position, Quaternion.identity, parent.transform);
     }
 }

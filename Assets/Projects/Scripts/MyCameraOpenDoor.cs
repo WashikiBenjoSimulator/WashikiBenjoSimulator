@@ -24,6 +24,11 @@ public class MyCameraOpenDoor : MonoBehaviour {
 				return;
 			}
 
+		if (leftHandTrigerAction.action.WasPerformedThisFrame()){
+					Debug.Log("ドアを開けるuuuuuuuu");
+		}
+
+
 			if (hit.transform.GetComponent<MyDoorScript.MyDoor>()){
 				GameScript.GameManager.Instance.textArea.text = "左トリガーでドアを開ける";
 
@@ -31,17 +36,23 @@ public class MyCameraOpenDoor : MonoBehaviour {
 				if (leftHandTrigerAction.action.WasPerformedThisFrame()){
 					Debug.Log("ドアを開ける");
 					hit.transform.GetComponent<MyDoorScript.MyDoor>().OpenDoor(hit.transform.gameObject);
-					
-					foreach (var item in WBSSceneManager.Instance.loadedScenes)
-					{
-						Debug.Log(item);
-					}
 
-					if(WBSSceneManager.Instance.loadedScenes.Contains("LobbyScene"))
+					if(BenjoSceneManager.Instance.IsSceneLoaded(BenjoSceneManager.SceneType.LobbyScene))
 					{
 						Debug.Log("ロビーからドミトリーへ移動");
-						WBSSceneManager.Instance.ChengeDomitoryScene();
+						BenjoSceneManager.Instance.ChengeDomitoryScene();
 					}
+					
+					// foreach (var item in WBSSceneManager.Instance.loadedScenes)
+					// {
+					// 	Debug.Log(item);
+					// }
+
+					// if(WBSSceneManager.Instance.loadedScenes.Contains("LobbyScene"))
+					// {
+					// 	Debug.Log("ロビーからドミトリーへ移動");
+					// 	WBSSceneManager.Instance.ChengeDomitoryScene();
+					// }
 				}
 			}
 		}

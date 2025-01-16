@@ -26,7 +26,6 @@ public class TouchDetection : MonoBehaviour
         }
         if (collider.gameObject.CompareTag("FlushHandle"))
         {
-            ToiletLever.Instance.RotateLever();
             GameManager.Instance.isFlushHandleTouch = true;
         }
     }

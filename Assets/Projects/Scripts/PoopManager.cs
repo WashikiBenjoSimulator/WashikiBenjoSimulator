@@ -26,16 +26,18 @@ public class PoopManager : SingletonMonoBehaviour<PoopManager>, IAltoManager
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (rightHandTrigerAction.action.WasPerformedThisFrame())
-        {
-            Debug.Log("Pooping!!!!!!");
-        }
+        // if(BenjoSceneManager.Instance.IsSceneLoaded(BenjoSceneManager.SceneType.DormitoryScene))
+        // {
+            if (rightHandTrigerAction.action.WasPerformedThisFrame())
+            {
+                Poop();
+            }
+        // }
     }
 
     public void Poop()
@@ -45,5 +47,15 @@ public class PoopManager : SingletonMonoBehaviour<PoopManager>, IAltoManager
         // poop.SetActive(true);
 
         Instantiate(poop, hipPos.transform.position, Quaternion.identity, parent.transform);
+        GameManager.Instance.isPoop = true;
+    }
+
+    public void FlushPoop()
+    {
+        Debug.Log("FlushPoop");
+        foreach (Transform child in parent.transform)
+        {
+            Destroy(child.gameObject);
+        }
     }
 }

@@ -289,7 +289,6 @@ GameObject:
   - component: {fileID: 603613129}
   - component: {fileID: 603613128}
   - component: {fileID: 603613127}
-  - component: {fileID: 603613131}
   m_Layer: 0
   m_Name: hipPosition
   m_TagString: Untagged
@@ -383,20 +382,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1596162768}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &603613131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 603613126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7f59b57609c2674b82ab5a4bbeab853, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textArea: {fileID: 1853511432}
-  rightHandTrigerAction: {fileID: -883006526375621116, guid: 27451da15c211db48beb0622ce96a5d6, type: 3}
 --- !u!1 &768558868
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,6 +1272,107 @@ MonoBehaviour:
   m_ActionAssets:
   - {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   - {fileID: -944628639613478452, guid: 27451da15c211db48beb0622ce96a5d6, type: 3}
+--- !u!1 &1401427987 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4372628900810570737, guid: 37c0f575b48f7ca41a3b83a1190496c0, type: 3}
+  m_PrefabInstance: {fileID: 7970983494514407022}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1401427990
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401427987}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c9e96af3b3681ed4786bcec05a2194c2, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1479151090
 GameObject:
   m_ObjectHideFlags: 0
@@ -1446,6 +1532,7 @@ GameObject:
   - component: {fileID: 1596162769}
   - component: {fileID: 1596162770}
   - component: {fileID: 1596162771}
+  - component: {fileID: 1596162772}
   m_Layer: 0
   m_Name: XR Origin (XR Rig)
   m_TagString: Untagged
@@ -1551,6 +1638,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1596162772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596162765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7f59b57609c2674b82ab5a4bbeab853, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hipPos: {fileID: 1596162765}
 --- !u!1 &1618121191
 GameObject:
   m_ObjectHideFlags: 0
@@ -2779,6 +2879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DistanceOpen: 1
   leftHandTrigerAction: {fileID: -3320752780465979505, guid: 27451da15c211db48beb0622ce96a5d6, type: 3}
+  toiletPaper: {fileID: 0}
 --- !u!1001 &2948970732751559485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2975,9 +3076,21 @@ PrefabInstance:
       value: poopManager
       objectReference: {fileID: 0}
     - target: {fileID: 7676913898847431191, guid: 37c0f575b48f7ca41a3b83a1190496c0, type: 3}
+      propertyPath: poop
+      value: 
+      objectReference: {fileID: 7498445250603277398, guid: bc4a500ce3f93384086c85158e77a4a3, type: 3}
+    - target: {fileID: 7676913898847431191, guid: 37c0f575b48f7ca41a3b83a1190496c0, type: 3}
       propertyPath: hipPos
       value: 
-      objectReference: {fileID: 603613126}
+      objectReference: {fileID: 1596162765}
+    - target: {fileID: 7676913898847431191, guid: 37c0f575b48f7ca41a3b83a1190496c0, type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1401427987}
+    - target: {fileID: 7676913898847431191, guid: 37c0f575b48f7ca41a3b83a1190496c0, type: 3}
+      propertyPath: rightHandTrigerAction
+      value: 
+      objectReference: {fileID: -883006526375621116, guid: 27451da15c211db48beb0622ce96a5d6, type: 3}
     - target: {fileID: 8472755008456680976, guid: 37c0f575b48f7ca41a3b83a1190496c0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.06531137
@@ -3021,7 +3134,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4372628900810570737, guid: 37c0f575b48f7ca41a3b83a1190496c0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1401427990}
   m_SourcePrefab: {fileID: 100100000, guid: 37c0f575b48f7ca41a3b83a1190496c0, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -19,8 +19,15 @@ namespace GameScript
 
         public int score = 100;
         public bool successPoop = false;
+        public bool isPoop = false;
         public bool isToiletPaperTouch = false;
         public bool isFlushHandleTouch = false;
+
+        private bool isFinish = false;
+
+        private float calcTime = 0;
+
+        private bool finishGame = false;
 
 
         // Start is called before the first frame update
@@ -39,12 +46,30 @@ namespace GameScript
             // }
             // else time = 0;
 
-            if(BenjoSceneManager.Instance.IsSceneLoaded(BenjoSceneManager.SceneType.DormitoryScene))
+            if(BenjoSceneManager.Instance.IsSceneLoaded(BenjoSceneManager.SceneType.DormitoryScene) && !isFinish)
             {
                 time += Time.deltaTime;
                 timeArea.text = "Time: " + time + "s";
             }
-            else time = 0;
+
+            if (time > 60 || isPoop == true)
+            {
+                textArea.text = "流しましょう";
+
+                isFinish = true;
+            }
+            if (isFinish)
+            {
+                calcTime += Time.deltaTime;
+                if (calcTime > 10f && !finishGame)
+                {
+                    textArea.text = "終了\nスコアを計算中...";
+                    BenjoSceneManager.Instance.ChengeLobbyScene();
+                    calcScore();
+                    finishGame = true;
+                }
+            }
+
         }
 
         public void calcScore()
@@ -53,7 +78,7 @@ namespace GameScript
             if (isCorrectSeatPos)
             {
                 score -= 20;
-                textArea.text = "\nトイレから離れすぎ -20";
+                textArea.text += "\nトイレから離れすぎ -20";
             }
             if (!successPoop)
             {

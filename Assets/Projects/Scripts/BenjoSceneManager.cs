@@ -20,7 +20,7 @@ public class BenjoSceneManager : SingletonMonoBehaviour<BenjoSceneManager>,IAlto
     // CoreSceneは必ず最初にロードされ、他のシーンは切り替え
     void Start()
     {
-        
+        LoadScene(SceneType.LobbyScene); 
     }
 
     // シーンをロードする関数

@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class hipMoving : MonoBehaviour
 {
-    public TextMeshProUGUI textArea;
+    [SerializeField] private GameObject hipPos;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +26,7 @@ public class hipMoving : MonoBehaviour
         if (other.gameObject.CompareTag("SeatPosition"))
         {
             GameManager.Instance.isCorrectSeatPos = true;
+            Debug.Log("トイレについた");
         }
     }
 }
